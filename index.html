@@ -3,16 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="STEAMinfo — 香港中小學生近期可參加的 STEAM／創意比賽資訊，包括科幻寫作、設計、編程、科學嘉年華等。" />
-  <title>STEAMinfo · 香港中小學比賽</title>
+  <meta name="description" content="STEAMinfo — 香港與國際中小學生 STEAM／創意比賽：壁紙、寫作、標誌、網頁／應用／遊戲設計、科學嘉年華等。" />
+  <title>STEAMinfo · 香港與國際學生比賽</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Noto+Sans+TC:wght@400;500;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet" />
   <style>
     :root {
       --ink: #071a1c;
-      --deep: #0d2f33;
-      --sea: #134448;
       --foam: #e8f2ef;
       --mist: #b7d0c8;
       --amber: #d9772e;
@@ -28,11 +26,8 @@
       --radius: 2px;
       --max: 1120px;
     }
-
     * { box-sizing: border-box; margin: 0; padding: 0; }
-
     html { scroll-behavior: smooth; }
-
     body {
       font-family: var(--body);
       background: var(--ink);
@@ -41,9 +36,7 @@
       min-height: 100vh;
       overflow-x: hidden;
     }
-
     a { color: inherit; }
-
     .grain {
       pointer-events: none;
       position: fixed;
@@ -52,12 +45,9 @@
       opacity: 0.045;
       background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
     }
-
     .site-nav {
       position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
+      top: 0; left: 0; right: 0;
       z-index: 20;
       display: flex;
       align-items: center;
@@ -66,7 +56,6 @@
       margin: 0 auto;
       padding: 1.25rem 1.5rem;
     }
-
     .site-nav a.logo {
       font-family: var(--display);
       font-weight: 800;
@@ -74,24 +63,11 @@
       letter-spacing: -0.03em;
       text-decoration: none;
     }
-
     .site-nav a.logo span { color: var(--amber); }
-
-    .nav-links {
-      display: flex;
-      gap: 1.25rem;
-      font-size: 0.85rem;
-      color: var(--mist);
-    }
-
-    .nav-links a {
-      text-decoration: none;
-      transition: color 0.2s ease;
-    }
-
+    .nav-links { display: flex; gap: 1.25rem; font-size: 0.85rem; color: var(--mist); }
+    .nav-links a { text-decoration: none; transition: color 0.2s ease; }
     .nav-links a:hover { color: var(--foam); }
 
-    /* —— Hero —— */
     .hero {
       position: relative;
       min-height: 100svh;
@@ -101,7 +77,6 @@
       isolation: isolate;
       overflow: hidden;
     }
-
     .hero-bg {
       position: absolute;
       inset: 0;
@@ -111,52 +86,32 @@
         radial-gradient(ellipse 70% 50% at 10% 80%, rgba(63, 154, 134, 0.22), transparent 50%),
         linear-gradient(165deg, #061416 0%, #0d2f33 42%, #163a32 78%, #0a1f22 100%);
     }
-
     .hero-bg::after {
       content: "";
       position: absolute;
       inset: 0;
       background:
         linear-gradient(90deg, transparent 0%, rgba(232, 242, 239, 0.03) 50%, transparent 100%),
-        repeating-linear-gradient(
-          -18deg,
-          transparent,
-          transparent 48px,
-          rgba(232, 242, 239, 0.025) 48px,
-          rgba(232, 242, 239, 0.025) 49px
-        );
+        repeating-linear-gradient(-18deg, transparent, transparent 48px, rgba(232, 242, 239, 0.025) 48px, rgba(232, 242, 239, 0.025) 49px);
       animation: drift 28s linear infinite;
     }
-
-    @keyframes drift {
-      from { transform: translateX(0); }
-      to { transform: translateX(-49px); }
-    }
-
+    @keyframes drift { from { transform: translateX(0); } to { transform: translateX(-49px); } }
     .hero-glow {
       position: absolute;
       width: min(70vw, 520px);
       height: min(70vw, 520px);
-      right: -8%;
-      bottom: 8%;
+      right: -8%; bottom: 8%;
       border-radius: 50%;
       background: radial-gradient(circle, rgba(240, 178, 122, 0.35), transparent 68%);
       filter: blur(8px);
       z-index: -1;
       animation: pulse 7s ease-in-out infinite;
     }
-
     @keyframes pulse {
       0%, 100% { opacity: 0.7; transform: scale(1); }
       50% { opacity: 1; transform: scale(1.06); }
     }
-
-    .hero-inner {
-      max-width: var(--max);
-      margin: 0 auto;
-      width: 100%;
-    }
-
+    .hero-inner { max-width: var(--max); margin: 0 auto; width: 100%; }
     .brand {
       font-family: var(--display);
       font-weight: 800;
@@ -166,30 +121,23 @@
       margin-bottom: 1.35rem;
       animation: rise 0.9s ease both;
     }
-
-    .brand em {
-      font-style: normal;
-      color: var(--amber);
-    }
-
+    .brand em { font-style: normal; color: var(--amber); }
     .hero h1 {
       font-family: var(--serif);
       font-weight: 400;
       font-size: clamp(1.25rem, 2.6vw, 1.85rem);
-      max-width: 18ch;
+      max-width: 22ch;
       line-height: 1.25;
       margin-bottom: 0.9rem;
       animation: rise 0.9s ease 0.12s both;
     }
-
     .hero-lead {
-      max-width: 36ch;
+      max-width: 40ch;
       color: var(--mist);
       font-size: 1rem;
       margin-bottom: 1.75rem;
       animation: rise 0.9s ease 0.22s both;
     }
-
     .cta-row {
       display: flex;
       flex-wrap: wrap;
@@ -197,7 +145,6 @@
       align-items: center;
       animation: rise 0.9s ease 0.32s both;
     }
-
     .btn {
       display: inline-flex;
       align-items: center;
@@ -212,46 +159,31 @@
       border: 1px solid transparent;
       transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
     }
-
-    .btn-primary {
-      background: var(--amber);
-      color: var(--ink);
-    }
-
+    .btn-primary { background: var(--amber); color: var(--ink); }
     .btn-primary:hover { transform: translateY(-2px); background: var(--amber-soft); }
-
     .btn-ghost {
       border-color: var(--line);
       color: var(--foam);
       background: rgba(7, 26, 28, 0.35);
     }
-
     .btn-ghost:hover { border-color: var(--mist); }
-
     .updated {
       margin-top: 2rem;
       font-size: 0.78rem;
       color: var(--muted);
       animation: rise 0.9s ease 0.4s both;
     }
-
     @keyframes rise {
       from { opacity: 0; transform: translateY(18px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* —— Sections —— */
     section {
       max-width: var(--max);
       margin: 0 auto;
       padding: 4.5rem 1.5rem 1rem;
     }
-
-    .section-head {
-      margin-bottom: 2rem;
-      max-width: 40rem;
-    }
-
+    .section-head { margin-bottom: 2rem; max-width: 42rem; }
     .section-head .eyebrow {
       font-family: var(--display);
       font-size: 0.75rem;
@@ -261,7 +193,6 @@
       color: var(--amber);
       margin-bottom: 0.55rem;
     }
-
     .section-head h2 {
       font-family: var(--display);
       font-weight: 800;
@@ -270,50 +201,54 @@
       line-height: 1.1;
       margin-bottom: 0.65rem;
     }
+    .section-head p { color: var(--mist); font-size: 1.02rem; }
 
-    .section-head p {
-      color: var(--mist);
-      font-size: 1.02rem;
-    }
-
-    /* Filters */
-    .filters {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-bottom: 1.75rem;
-      padding-bottom: 1.25rem;
+    .filter-bar {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 0.85rem 1rem;
+      margin-bottom: 1.5rem;
+      padding: 1.1rem 0 1.35rem;
       border-bottom: 1px solid var(--line);
+      align-items: end;
     }
-
-    .filter-btn {
+    .filter-field label {
+      display: block;
       font-family: var(--display);
-      font-size: 0.82rem;
+      font-size: 0.68rem;
       font-weight: 700;
-      letter-spacing: -0.01em;
-      padding: 0.5rem 0.9rem;
-      border-radius: var(--radius);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--jade);
+      margin-bottom: 0.4rem;
+    }
+    .filter-field select {
+      width: 100%;
+      appearance: none;
+      background: rgba(7, 26, 28, 0.65)
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%9bb8b0' d='M1 1l5 5 5-5'/%3E%3C/svg%3E")
+        right 0.85rem center / 12px no-repeat;
+      color: var(--foam);
       border: 1px solid var(--line);
-      background: transparent;
-      color: var(--mist);
+      border-radius: var(--radius);
+      padding: 0.7rem 2.2rem 0.7rem 0.85rem;
+      font-family: var(--body);
+      font-size: 0.92rem;
       cursor: pointer;
-      transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
     }
-
-    .filter-btn:hover,
-    .filter-btn[aria-pressed="true"] {
-      background: var(--foam);
-      color: var(--ink);
-      border-color: var(--foam);
+    .filter-field select:focus {
+      outline: 2px solid var(--amber);
+      outline-offset: 2px;
     }
-
-    /* Competition rows — editorial, not card grid clutter */
-    .comp-list {
-      display: flex;
-      flex-direction: column;
-      gap: 0;
+    .filter-count {
+      font-size: 0.85rem;
+      color: var(--muted);
+      grid-column: 1 / -1;
+      margin-top: 0.15rem;
     }
+    .filter-count strong { color: var(--foam); font-weight: 600; }
 
+    .comp-list { display: flex; flex-direction: column; }
     .comp {
       display: grid;
       grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
@@ -322,18 +257,9 @@
       border-top: 1px solid var(--line);
       transition: background 0.25s ease;
     }
-
     .comp:last-child { border-bottom: 1px solid var(--line); }
-
     .comp:hover { background: rgba(232, 242, 239, 0.03); }
-
-    .comp-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-      margin-bottom: 0.7rem;
-    }
-
+    .comp-meta { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.7rem; }
     .tag {
       font-family: var(--display);
       font-size: 0.68rem;
@@ -345,40 +271,35 @@
       border: 1px solid var(--line);
       color: var(--mist);
     }
-
     .tag-open {
       background: rgba(63, 154, 134, 0.2);
       border-color: rgba(63, 154, 134, 0.55);
       color: #8fd4c2;
     }
-
     .tag-soon {
       background: rgba(217, 119, 46, 0.18);
       border-color: rgba(217, 119, 46, 0.5);
       color: var(--amber-soft);
     }
-
     .tag-closed {
       background: rgba(196, 92, 74, 0.15);
       border-color: rgba(196, 92, 74, 0.4);
       color: #e0a099;
     }
-
+    .tag-global {
+      background: rgba(232, 242, 239, 0.08);
+      border-color: rgba(232, 242, 239, 0.28);
+      color: var(--foam);
+    }
     .comp h3 {
       font-family: var(--display);
       font-weight: 700;
-      font-size: clamp(1.15rem, 2.2vw, 1.4rem);
+      font-size: clamp(1.1rem, 2.2vw, 1.35rem);
       letter-spacing: -0.025em;
       line-height: 1.25;
       margin-bottom: 0.45rem;
     }
-
-    .comp .blurb {
-      color: var(--mist);
-      font-size: 0.95rem;
-      max-width: 42rem;
-    }
-
+    .comp .blurb { color: var(--mist); font-size: 0.95rem; max-width: 42rem; }
     .comp-aside {
       display: flex;
       flex-direction: column;
@@ -387,7 +308,6 @@
       color: var(--muted);
       justify-content: center;
     }
-
     .comp-aside dt {
       font-family: var(--display);
       font-size: 0.68rem;
@@ -397,14 +317,12 @@
       color: var(--jade);
       margin-bottom: 0.1rem;
     }
-
     .comp-aside dd { color: var(--foam); margin-bottom: 0.35rem; }
-
     .comp-aside a.official {
       display: inline-flex;
       align-items: center;
       gap: 0.35rem;
-      margin-top: 0.35rem;
+      margin-top: 0.2rem;
       font-family: var(--display);
       font-weight: 700;
       font-size: 0.88rem;
@@ -414,22 +332,17 @@
       width: fit-content;
       transition: border-color 0.2s ease, color 0.2s ease;
     }
-
-    .comp-aside a.official:hover {
-      color: var(--foam);
-      border-bottom-color: var(--foam);
-    }
-
-    .note {
-      font-size: 0.8rem;
-      color: var(--muted);
-      font-style: italic;
-      margin-top: 0.35rem;
-    }
-
+    .comp-aside a.official:hover { color: var(--foam); border-bottom-color: var(--foam); }
+    .note { font-size: 0.8rem; color: var(--muted); font-style: italic; margin-top: 0.35rem; }
     .comp[hidden] { display: none; }
+    .empty-state {
+      display: none;
+      padding: 2rem 0;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+    }
+    .empty-state.visible { display: block; }
 
-    /* Atmosphere band */
     .band {
       margin: 3.5rem 0 0;
       padding: 3.5rem 1.5rem;
@@ -438,19 +351,15 @@
         radial-gradient(ellipse at 20% 50%, rgba(217, 119, 46, 0.15), transparent 55%);
       border-block: 1px solid var(--line);
     }
-
     .band-inner {
       max-width: var(--max);
       margin: 0 auto;
       display: grid;
       gap: 1.5rem;
-      grid-template-columns: 1fr;
     }
-
     @media (min-width: 720px) {
       .band-inner { grid-template-columns: 1.2fr 1fr; align-items: end; }
     }
-
     .band h2 {
       font-family: var(--display);
       font-weight: 800;
@@ -458,25 +367,17 @@
       letter-spacing: -0.03em;
       line-height: 1.15;
     }
-
     .band p { color: var(--mist); max-width: 36ch; }
 
-    /* Footer */
     footer {
       max-width: var(--max);
-      margin: 0 auto;
+      margin: 3rem auto 0;
       padding: 3.5rem 1.5rem 3rem;
       color: var(--muted);
       font-size: 0.85rem;
       border-top: 1px solid var(--line);
-      margin-top: 3rem;
     }
-
-    footer strong {
-      color: var(--foam);
-      font-weight: 500;
-    }
-
+    footer strong { color: var(--foam); font-weight: 500; }
     footer .brand-foot {
       font-family: var(--display);
       font-weight: 800;
@@ -485,7 +386,6 @@
       letter-spacing: -0.03em;
       margin-bottom: 0.75rem;
     }
-
     footer .brand-foot span { color: var(--amber); }
 
     @media (max-width: 760px) {
@@ -493,12 +393,8 @@
       .comp { grid-template-columns: 1fr; gap: 1rem; }
       .hero { min-height: 92svh; padding-bottom: 2.75rem; }
     }
-
     @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        animation: none !important;
-        transition: none !important;
-      }
+      *, *::before, *::after { animation: none !important; transition: none !important; }
     }
   </style>
 </head>
@@ -508,9 +404,9 @@
   <nav class="site-nav" aria-label="主要導覽">
     <a class="logo" href="#top">STEAM<span>info</span></a>
     <div class="nav-links">
-      <a href="#open">開放中</a>
-      <a href="#creative">創意設計</a>
-      <a href="#recent">近期賽事</a>
+      <a href="#open">比賽一覽</a>
+      <a href="#filters">篩選</a>
+      <a href="#about-filters">說明</a>
     </div>
   </nav>
 
@@ -519,11 +415,11 @@
     <div class="hero-glow" aria-hidden="true"></div>
     <div class="hero-inner">
       <p class="brand">STEAM<em>info</em></p>
-      <h1>香港中小學生，最近可以參加的比賽。</h1>
-      <p class="hero-lead">科幻畫、信息圖、程式遊戲、應用構想、科學發明——真實賽事、官方連結、清楚標示截止日。</p>
+      <h1>香港與國際，學生可以參加的比賽。</h1>
+      <p class="hero-lead">壁紙、科幻寫作、標誌、網頁／應用／遊戲設計、科學嘉年華——本地與全球賽事、官方連結、下拉篩選。</p>
       <div class="cta-row">
-        <a class="btn btn-primary" href="#open">查看開放中賽事</a>
-        <a class="btn btn-ghost" href="#recent">近期已完結／留意下屆</a>
+        <a class="btn btn-primary" href="#open">瀏覽比賽</a>
+        <a class="btn btn-ghost" href="#filters">用篩選找賽事</a>
       </div>
       <p class="updated">資料整理日期：2026年11月24日（香港時間）。截止日請以官方頁為準。</p>
     </div>
@@ -531,420 +427,556 @@
 
   <section id="open" aria-labelledby="open-heading">
     <div class="section-head">
-      <p class="eyebrow">Open now</p>
-      <h2 id="open-heading">現正接受報名</h2>
-      <p>以下賽事於整理當日仍開放或即將截止。按級別篩選，點官方連結核實最新章程。</p>
+      <p class="eyebrow">Browse</p>
+      <h2 id="open-heading">比賽一覽</h2>
+      <p>含香港與國際賽事。用下方下拉選單即時篩選；標籤顯示開放狀態與地區。</p>
     </div>
 
-    <div class="filters" role="group" aria-label="級別篩選">
-      <button type="button" class="filter-btn" data-filter="all" aria-pressed="true">全部</button>
-      <button type="button" class="filter-btn" data-filter="primary" aria-pressed="false">小學</button>
-      <button type="button" class="filter-btn" data-filter="secondary" aria-pressed="false">中學</button>
-      <button type="button" class="filter-btn" data-filter="design" aria-pressed="false">設計／創意</button>
-      <button type="button" class="filter-btn" data-filter="tech" aria-pressed="false">科創／編程</button>
+    <div class="filter-bar" id="filters" role="search" aria-label="比賽篩選">
+      <div class="filter-field">
+        <label for="filter-region">地區</label>
+        <select id="filter-region">
+          <option value="all" selected>全部地區</option>
+          <option value="hk">香港</option>
+          <option value="global">國際／全球</option>
+        </select>
+      </div>
+      <div class="filter-field">
+        <label for="filter-category">類別</label>
+        <select id="filter-category">
+          <option value="all" selected>全部類別</option>
+          <option value="wallpaper">壁紙／牆面設計</option>
+          <option value="writing">寫作／科幻故事</option>
+          <option value="logo">標誌／視覺設計</option>
+          <option value="web">網頁設計</option>
+          <option value="app">應用設計</option>
+          <option value="game">遊戲設計</option>
+          <option value="sciencefair">科學嘉年華／科研</option>
+          <option value="infographic">信息圖／海報</option>
+          <option value="coding">編程／創科</option>
+        </select>
+      </div>
+      <div class="filter-field">
+        <label for="filter-audience">對象</label>
+        <select id="filter-audience">
+          <option value="all" selected>全部對象</option>
+          <option value="primary">小學</option>
+          <option value="secondary">中學</option>
+          <option value="tertiary">大專／相關學員</option>
+        </select>
+      </div>
+      <div class="filter-field">
+        <label for="filter-status">狀態</label>
+        <select id="filter-status">
+          <option value="all" selected>全部狀態</option>
+          <option value="open">開放中</option>
+          <option value="soon">即將開放</option>
+          <option value="closed">已完結／留意下屆</option>
+        </select>
+      </div>
+      <p class="filter-count" id="filter-count" aria-live="polite">顯示 <strong>0</strong> 項</p>
     </div>
 
-    <div class="comp-list" id="open-list">
-      <article class="comp" data-levels="primary secondary" data-tags="design tech" data-status="open">
+    <div class="comp-list" id="comp-list">
+
+      <!-- ===== GLOBAL OPEN ===== -->
+      <article class="comp" data-region="global" data-levels="secondary tertiary" data-cats="wallpaper logo" data-status="open">
         <div>
           <div class="comp-meta">
             <span class="tag tag-open">開放中</span>
-            <span class="tag">小學 · 中學</span>
-            <span class="tag">科幻畫 · 發明 · 研究</span>
+            <span class="tag tag-global">國際</span>
+            <span class="tag">壁紙／牆面</span>
           </div>
-          <h3>第29屆香港青少年科技創新大賽</h3>
-          <p class="blurb">全港大型學界 STEAM 盛事。學生組包括科學幻想畫、研究及發明等，適合想畫科幻場景、做發明或寫研究報告的中小學生。</p>
+          <h3>Sangetsu Design Award 2026</h3>
+          <p class="blurb">日本 Sangetsu 第十屆設計獎，主題 Joy of Design，徵集牆面／空間設計（由壁紙獎擴展至 wall design）。公開徵件，學生亦可依章程報名。</p>
         </div>
         <dl class="comp-aside">
-          <div>
-            <dt>主辦</dt>
-            <dd>香港新一代文化協會</dd>
+          <div><dt>主辦</dt><dd>Sangetsu Corporation</dd></div>
+          <div><dt>截止</dt><dd>2026年12月3日 18:00 JST</dd></div>
+          <div><dt>對象</dt><dd>公開徵件（含學生；請核實章程）</dd></div>
+          <a class="official" href="https://www.sangetsu-award.jp/en/" target="_blank" rel="noopener noreferrer">官方網站 →</a>
+        </dl>
+      </article>
+
+      <article class="comp" data-region="global" data-levels="primary secondary tertiary" data-cats="game app" data-status="open">
+        <div>
+          <div class="comp-meta">
+            <span class="tag tag-open">開放中</span>
+            <span class="tag tag-global">國際</span>
+            <span class="tag">遊戲 · 美術 · 預告片</span>
           </div>
-          <div>
-            <dt>截止</dt>
-            <dd>報名 2027年1月15日 23:59；交件 2027年1月22日</dd>
+          <h3>Games for Change Student Challenge 2027</h3>
+          <p class="blurb">8–25 歲可提交原創遊戲、美術或預告片。主題含 Bounce Back、Everyone Belongs Here。獎項可含 Student Challenge Arcade 曝光與獎學金。</p>
+        </div>
+        <dl class="comp-aside">
+          <div><dt>主辦</dt><dd>Games for Change</dd></div>
+          <div><dt>截止</dt><dd>2027年3月29日 23:59 PT</dd></div>
+          <div><dt>對象</dt><dd>8–10／11–13／14–18／19–25 歲分組</dd></div>
+          <a class="official" href="https://g4cstudentchallenge.secure-platform.com/a/organizations/main/home" target="_blank" rel="noopener noreferrer">提交平台 →</a>
+        </dl>
+      </article>
+
+      <article class="comp" data-region="global" data-levels="primary secondary" data-cats="game" data-status="open">
+        <div>
+          <div class="comp-meta">
+            <span class="tag tag-open">開放中</span>
+            <span class="tag tag-global">國際</span>
+            <span class="tag">學生 Game Jam</span>
           </div>
-          <div>
-            <dt>級別</dt>
-            <dd>小學及中學（含國際學校）</dd>
+          <h3>GGJ Next × G4C Student Challenge Jam</h3>
+          <p class="blurb">Global Game Jam 與 Games for Change 合作：10–18 歲可於 2026年11月15日至 2027年3月15日參加 GGJ Next jam，作品可提交至 G4C Student Challenge（截止 3月29日）。另有 GGJ 2027 主活動（1月25–31日）。</p>
+        </div>
+        <dl class="comp-aside">
+          <div><dt>主辦</dt><dd>Global Game Jam · Games for Change</dd></div>
+          <div><dt>時段</dt><dd>GGJ Next jam：2026-11-15 至 2027-03-15</dd></div>
+          <div><dt>對象</dt><dd>約 10–18 歲（GGJ Next）</dd></div>
+          <a class="official" href="https://globalgamejam.org/ggjnext" target="_blank" rel="noopener noreferrer">GGJ Next →</a>
+          <a class="official" href="https://globalgamejam.org/news/global-game-jam-partners-games-change-serve-student-jammers-ggj-next-jam-partner-g4c-student" target="_blank" rel="noopener noreferrer">合作說明（2025 公告） →</a>
+        </dl>
+      </article>
+
+      <article class="comp" data-region="global" data-levels="primary secondary" data-cats="game" data-status="open">
+        <div>
+          <div class="comp-meta">
+            <span class="tag tag-open">開放中</span>
+            <span class="tag tag-global">國際（希臘／塞浦路斯／僑民）</span>
+            <span class="tag">桌遊 · 數位遊戲</span>
           </div>
+          <h3>EKKOMED「The Lesson is a Game」第7屆國際學生比賽 2026–27</h3>
+          <p class="blurb">主題「Greek Cinema: Yesterday, Today, Tomorrow」。小學與中學設計原創教育桌遊、擴增桌遊或數位遊戲。對象為希臘、塞浦路斯及希臘僑民學校。</p>
+          <p class="note">地區資格有限制；非上述學校請先核實是否符合章程。</p>
+        </div>
+        <dl class="comp-aside">
+          <div><dt>主辦</dt><dd>EKKOMED（希臘影視與視聽中心）</dd></div>
+          <div><dt>截止</dt><dd>2027年3月12日</dd></div>
+          <div><dt>對象</dt><dd>小學及中學（希臘／塞浦路斯／僑民）</dd></div>
+          <a class="official" href="https://www.ekkomed.gr/audiovisual-literacy-educate/student-competition/" target="_blank" rel="noopener noreferrer">比賽總覽 →</a>
+          <a class="official" href="https://www.ekkomed.gr/news-activities-en/greek-cinema-yesterday-today-tomorrow-the-new-theme-of-ekkomeds-7th-international-student-competition-the-lesson-is-a-game/" target="_blank" rel="noopener noreferrer">2026–27 主題公告 →</a>
+        </dl>
+      </article>
+
+      <article class="comp" data-region="global" data-levels="primary secondary" data-cats="app web coding" data-status="open">
+        <div>
+          <div class="comp-meta">
+            <span class="tag tag-open">開放中</span>
+            <span class="tag tag-global">國際</span>
+            <span class="tag">應用 · 網頁 · 數位方案</span>
+          </div>
+          <h3>Technovation Challenge 2026–27</h3>
+          <p class="blurb">全球青少年組隊（1–5 人，約 8–18 歲）以編程／AI 解決社區問題。2027 季可提交流動應用、互動網頁、chatbot、儀表板等「數位方案」（不限於傳統 app）。</p>
+        </div>
+        <dl class="comp-aside">
+          <div><dt>主辦</dt><dd>Technovation</dd></div>
+          <div><dt>截止</dt><dd>報名至 2027年3月11日 23:59 UTC；作品 2027年5月5日 17:00 PDT</dd></div>
+          <div><dt>對象</dt><dd>約 8–18 歲（Beginner／Junior／Senior）</dd></div>
+          <a class="official" href="https://technovationchallenge.org/competition/" target="_blank" rel="noopener noreferrer">比賽頁 →</a>
+        </dl>
+      </article>
+
+      <article class="comp" data-region="global" data-levels="secondary" data-cats="sciencefair" data-status="open">
+        <div>
+          <div class="comp-meta">
+            <span class="tag tag-open">途徑開放</span>
+            <span class="tag tag-global">國際</span>
+            <span class="tag">科學展覽</span>
+          </div>
+          <h3>Regeneron ISEF 2027（經認可科學展晉級）</h3>
+          <p class="blurb">全球最大預科國際科學工程展。學生須先於 Society for Science 認可科學展獲選；ISEF 2027 於洛杉磯舉行（2027年5月8–14日）。高中程度（約 9–12 年級）。</p>
+        </div>
+        <dl class="comp-aside">
+          <div><dt>主辦</dt><dd>Society for Science</dd></div>
+          <div><dt>時程</dt><dd>認可展至約 2027年4月；ISEF：2027年5月</dd></div>
+          <div><dt>對象</dt><dd>中學（grades 9–12 或同等）</dd></div>
+          <a class="official" href="https://www.societyforscience.org/isef/" target="_blank" rel="noopener noreferrer">ISEF 官網 →</a>
+          <a class="official" href="https://www.societyforscience.org/isef/affiliated-fair-network/" target="_blank" rel="noopener noreferrer">認可展網絡 →</a>
+        </dl>
+      </article>
+
+      <article class="comp" data-region="global" data-levels="tertiary secondary" data-cats="app coding" data-status="open">
+        <div>
+          <div class="comp-meta">
+            <span class="tag tag-open">報名中</span>
+            <span class="tag tag-global">國際</span>
+            <span class="tag">音訊插件 · MATLAB</span>
+          </div>
+          <h3>AES Student Competition: MATLAB Plugin Hackathon 2026</h3>
+          <p class="blurb">Audio Engineering Society × MathWorks 線上黑客松：以 MATLAB 設計音訊 VST 插件。須為 AES 學生會員，並就讀與音訊／軟件相關課程——多數為大專，符合條件的中學課程學員請核實章程。</p>
+        </div>
+        <dl class="comp-aside">
+          <div><dt>主辦</dt><dd>AES · MathWorks</dd></div>
+          <div><dt>比賽窗</dt><dd>2026年12月12日 10:00–13日 14:00 US EST（約）</dd></div>
+          <div><dt>對象</dt><dd>AES 學生會員（多為大專）</dd></div>
+          <a class="official" href="https://aesstudents.org/competitions/matlab-competition/" target="_blank" rel="noopener noreferrer">官方頁 →</a>
+        </dl>
+      </article>
+
+      <!-- ===== HK OPEN ===== -->
+      <article class="comp" data-region="hk" data-levels="primary secondary" data-cats="sciencefair writing logo coding" data-status="open">
+        <div>
+          <div class="comp-meta">
+            <span class="tag tag-open">開放中</span>
+            <span class="tag">香港</span>
+            <span class="tag">科幻畫 · 發明</span>
+          </div>
+          <h3>第29屆香港青少年科技創新大賽</h3>
+          <p class="blurb">全港大型學界 STEAM 盛事。學生組包括科學幻想畫、研究及發明等。</p>
+        </div>
+        <dl class="comp-aside">
+          <div><dt>主辦</dt><dd>香港新一代文化協會</dd></div>
+          <div><dt>截止</dt><dd>報名 2027年1月15日 23:59；交件 2027年1月22日</dd></div>
+          <div><dt>對象</dt><dd>小學及中學</dd></div>
           <a class="official" href="https://stic.newgen.org.hk/" target="_blank" rel="noopener noreferrer">官方網站 →</a>
         </dl>
       </article>
 
-      <article class="comp" data-levels="primary secondary" data-tags="design tech" data-status="open">
+      <article class="comp" data-region="hk" data-levels="primary secondary tertiary" data-cats="coding app sciencefair" data-status="open">
         <div>
           <div class="comp-meta">
             <span class="tag tag-open">開放中</span>
-            <span class="tag">小學 · 中學</span>
+            <span class="tag">香港</span>
             <span class="tag">ICT · 科學短片</span>
           </div>
           <h3>第九屆大灣區數字教育 STEAM 卓越獎 2027（香港）</h3>
-          <p class="blurb">涵蓋 ICT（資訊科技／AI／機械人）、生命健康、新材料與新能源、科學短片等。個人或隊伍（中小學最多五人）均可，適合網頁／應用構想、機械人及科學短片創作。</p>
+          <p class="blurb">ICT（IT／AI／機械人）、生命健康、新材料、科學短片等。中小學最多五人一隊。</p>
         </div>
         <dl class="comp-aside">
-          <div>
-            <dt>主辦</dt>
-            <dd>香港新興科技教育協會（HKNETEA）</dd>
-          </div>
-          <div>
-            <dt>截止</dt>
-            <dd>完整參賽資料：2027年4月15日 23:59</dd>
-          </div>
-          <div>
-            <dt>級別</dt>
-            <dd>小學、初中、高中（另有大專等組）</dd>
-          </div>
+          <div><dt>主辦</dt><dd>香港新興科技教育協會（HKNETEA）</dd></div>
+          <div><dt>截止</dt><dd>2027年4月15日 23:59</dd></div>
+          <div><dt>對象</dt><dd>小學、初中、高中（另有大專等）</dd></div>
           <a class="official" href="https://www.hknetea.org/zh/competitions-1/desa-2026-27" target="_blank" rel="noopener noreferrer">官方章程 →</a>
         </dl>
       </article>
 
-      <article class="comp" data-levels="primary secondary" data-tags="design" data-status="open">
+      <article class="comp" data-region="hk" data-levels="primary secondary" data-cats="infographic logo" data-status="open">
         <div>
           <div class="comp-meta">
             <span class="tag tag-open">開放中</span>
-            <span class="tag">高小 · 中學</span>
-            <span class="tag">信息圖設計</span>
+            <span class="tag">香港</span>
+            <span class="tag">信息圖</span>
           </div>
           <h3>中小學數學應用創意信息圖設計比賽 2026/27</h3>
-          <p class="blurb">教育局主辦的年度信息圖設計賽。本屆主題「描繪宇宙：太空探索背後的數學」，以 A3 信息圖＋短文呈現數學在航天／觀星等領域的應用——貼近海報／壁紙式視覺傳達。</p>
+          <p class="blurb">教育局主辦。主題「描繪宇宙：太空探索背後的數學」。A3 信息圖＋短文。</p>
         </div>
         <dl class="comp-aside">
-          <div>
-            <dt>主辦</dt>
-            <dd>教育局數學教育組</dd>
-          </div>
-          <div>
-            <dt>截止</dt>
-            <dd>報名表 2027年2月16日；作品 2027年3月2日 17:00</dd>
-          </div>
-          <div>
-            <dt>級別</dt>
-            <dd>高小（小四至小六）、初中、高中</dd>
-          </div>
+          <div><dt>主辦</dt><dd>教育局數學教育組</dd></div>
+          <div><dt>截止</dt><dd>報名表 2027年2月16日；作品 2027年3月2日 17:00</dd></div>
+          <div><dt>對象</dt><dd>高小、初中、高中</dd></div>
           <a class="official" href="https://www.edb.gov.hk/en/curriculum-development/kla/ma/res/sa/midc.html" target="_blank" rel="noopener noreferrer">教育局專頁 →</a>
         </dl>
       </article>
 
-      <article class="comp" data-levels="secondary" data-tags="tech design" data-status="open">
+      <article class="comp" data-region="hk" data-levels="secondary" data-cats="app web coding" data-status="open">
         <div>
           <div class="comp-meta">
             <span class="tag tag-open">開放中</span>
-            <span class="tag">初中</span>
+            <span class="tag">香港</span>
             <span class="tag">應用／介面構想</span>
           </div>
           <h3>中電校園工程師——能源築未來挑戰賽 2026/27</h3>
-          <p class="blurb">以「智・韌未來」為題，運用 AI、物聯網等提出強化電網韌性的方案。初賽提交計劃書與概念圖（可含介面設計），十強獲資助做原型——適合應用設計／產品構想。</p>
+          <p class="blurb">初賽提交計劃書與概念圖（可含介面設計），十強獲資助做原型。</p>
         </div>
         <dl class="comp-aside">
-          <div>
-            <dt>主辦</dt>
-            <dd>中華電力；活動統籌：星島新聞</dd>
-          </div>
-          <div>
-            <dt>截止</dt>
-            <dd>報名 2026年12月18日 23:59；計劃書 2027年2月1日</dd>
-          </div>
-          <div>
-            <dt>級別</dt>
-            <dd>中一至中三，每隊 3–5 人，經學校報名</dd>
-          </div>
+          <div><dt>主辦</dt><dd>中華電力；統籌：星島新聞</dd></div>
+          <div><dt>截止</dt><dd>報名 2026年12月18日 23:59；計劃書 2027年2月1日</dd></div>
+          <div><dt>對象</dt><dd>中一至中三</dd></div>
           <a class="official" href="https://www.clp.com.hk/en/education-development/engineer-in-school-programme" target="_blank" rel="noopener noreferrer">中電計劃頁 →</a>
           <a class="official" href="https://www.stheadline.com/theme/clp_eis2026" target="_blank" rel="noopener noreferrer">報名專頁 →</a>
         </dl>
       </article>
 
-      <article class="comp" data-levels="primary secondary" data-tags="tech" data-status="open">
+      <article class="comp" data-region="hk" data-levels="primary secondary" data-cats="coding game" data-status="open">
         <div>
           <div class="comp-meta">
             <span class="tag tag-open">開放中</span>
-            <span class="tag">幼兒至中學</span>
-            <span class="tag">機械人 · 編程</span>
+            <span class="tag">香港</span>
+            <span class="tag">機械人</span>
           </div>
           <h3>WRO 香港機械人「冬季」挑戰賽 2027</h3>
-          <p class="blurb">香港區 WRO 官方冬季挑戰，設循線、童趣、生態等項目。可個人或團體參賽，提交影片評核——適合對遊戲化機械人任務有興趣的隊伍。</p>
+          <p class="blurb">循線、童趣、生態等項目；可提交影片評核。</p>
         </div>
         <dl class="comp-aside">
-          <div>
-            <dt>主辦</dt>
-            <dd>WRO 香港區官方（見賽事頁）</dd>
-          </div>
-          <div>
-            <dt>截止</dt>
-            <dd>報名及提交影片：至 2027年1月24日</dd>
-          </div>
-          <div>
-            <dt>級別</dt>
-            <dd>幼兒／初小／高小／中學（視項目而定）</dd>
-          </div>
+          <div><dt>主辦</dt><dd>WRO 香港區官方</dd></div>
+          <div><dt>截止</dt><dd>報名及影片至 2027年1月24日</dd></div>
+          <div><dt>對象</dt><dd>幼兒至中學（視項目）</dd></div>
           <a class="official" href="https://www.peachcp.com/wro-hk/hkrc-w-2027/" target="_blank" rel="noopener noreferrer">官方賽事頁 →</a>
         </dl>
       </article>
 
-      <article class="comp" data-levels="primary secondary" data-tags="tech design" data-status="open">
+      <article class="comp" data-region="hk" data-levels="primary secondary" data-cats="game" data-status="soon">
+        <div>
+          <div class="comp-meta">
+            <span class="tag tag-soon">即將開放</span>
+            <span class="tag">香港</span>
+            <span class="tag">Game Jam</span>
+          </div>
+          <h3>Game Jam Next 2027（ga-jam.com）</h3>
+          <p class="blurb">香港舉辦的遊戲創作體驗，設中小學組及大專組。2027 日期與報名狀態標示「即將公布／即將開放」。</p>
+        </div>
+        <dl class="comp-aside">
+          <div><dt>主辦</dt><dd>見 ga-jam.com</dd></div>
+          <div><dt>狀態</dt><dd>報名即將開放（截止待公布）</dd></div>
+          <div><dt>對象</dt><dd>小學、中學、大專</dd></div>
+          <a class="official" href="https://ga-jam.com/?i=1" target="_blank" rel="noopener noreferrer">官方網站 →</a>
+        </dl>
+      </article>
+
+      <article class="comp" data-region="hk" data-levels="primary secondary" data-cats="coding sciencefair" data-status="open">
         <div>
           <div class="comp-meta">
             <span class="tag tag-soon">開放報名</span>
-            <span class="tag">學生</span>
-            <span class="tag">船艦設計 · 3D</span>
+            <span class="tag">香港</span>
+            <span class="tag">船艦設計</span>
           </div>
-          <h3>STEM × Marine Vehicle Design and Construction Competition 2026–2027</h3>
-          <p class="blurb">香港海事博物館與香港船東會支持的船艦設計與建造比賽。工作坊涵蓋流體力學、3D 設計軟件與實作測試——適合設計／工程取向學生。詳情級別請於官方頁核實。</p>
-          <p class="note">官方活動頁標示「現正接受報名」；組別及截止日細節以博物館最新公佈為準。</p>
+          <h3>STEM × Marine Vehicle Design and Construction 2026–2027</h3>
+          <p class="blurb">海事博物館與船東會支持的船艦設計與建造比賽；含 3D 設計與實作。組別細節以官方頁為準。</p>
+          <p class="note">官方標示現正接受報名；級別／截止請核實。</p>
         </div>
         <dl class="comp-aside">
-          <div>
-            <dt>主辦／支持</dt>
-            <dd>香港海事博物館、香港船東會</dd>
-          </div>
-          <div>
-            <dt>截止</dt>
-            <dd>見官方活動頁（2026–27 學年）</dd>
-          </div>
-          <div>
-            <dt>級別</dt>
-            <dd>學生活動（請核實組別）</dd>
-          </div>
+          <div><dt>主辦／支持</dt><dd>香港海事博物館、香港船東會</dd></div>
+          <div><dt>截止</dt><dd>見官方活動頁</dd></div>
+          <div><dt>對象</dt><dd>學生（請核實組別）</dd></div>
           <a class="official" href="https://www.hkmaritimemuseum.org/event-details/stem-x-marine-vehicle-design-and-construction-competition-2026-2027" target="_blank" rel="noopener noreferrer">海事博物館活動頁 →</a>
         </dl>
       </article>
-    </div>
-  </section>
 
-  <div class="band" id="creative">
-    <div class="band-inner">
-      <h2>想畫、想寫、想做介面？從「開放中」挑一條創作線。</h2>
-      <p>科幻畫對應 HKYSTIC；信息圖／海報式設計對應教育局 MIDC；應用介面構想對應中電挑戰賽與 STEAM 卓越獎 ICT 組。</p>
-    </div>
-  </div>
-
-  <section id="recent" aria-labelledby="recent-heading">
-    <div class="section-head">
-      <p class="eyebrow">Recently available</p>
-      <h2 id="recent-heading">近期完結 · 留意下屆</h2>
-      <p>這些賽事在 2025/26 或剛過去的月份曾開放，多數為年度賽。適合先了解形式，準備下一屆。</p>
-    </div>
-
-    <div class="comp-list">
-      <article class="comp" data-levels="primary secondary" data-tags="design" data-status="closed">
+      <!-- ===== CLOSED / RECENT ===== -->
+      <article class="comp" data-region="global" data-levels="primary secondary" data-cats="game" data-status="closed">
         <div>
           <div class="comp-meta">
             <span class="tag tag-closed">已完結</span>
-            <span class="tag">小學 · 中學</span>
-            <span class="tag">填色 · 海報設計</span>
+            <span class="tag tag-global">國際（台灣）</span>
+            <span class="tag">教育遊戲</span>
           </div>
-          <h3>第59屆聯校科學展覽 — 小學填色／中學海報設計比賽</h3>
-          <p class="blurb">主題「輝映」。小學填色、中學海報（電子繪圖或 A4 手繪）截止約為 2026年5月31日；展覽於 2026年8月在中央圖書館舉行。第60屆籌委會已開始運作，海報／填色賽預計隨新一屆再開放。</p>
+          <h3>第七屆 2026 全球華人教育遊戲設計大賞（EGDA）</h3>
+          <p class="blurb">教育桌遊（含學生組：高中或以下）、教育實境遊戲、數位教育遊戲。2026 報名約至 5月、交件至 8月——留意下屆開放。</p>
         </div>
         <dl class="comp-aside">
-          <div>
-            <dt>主辦</dt>
-            <dd>聯校科學展覽籌備委員會</dd>
+          <div><dt>主辦</dt><dd>見 eg-da.org（國立臺灣科技大學等）</dd></div>
+          <div><dt>狀態</dt><dd>2026 屆已過報名／交件窗</dd></div>
+          <div><dt>對象</dt><dd>學生組：高中或以下；另有公開組</dd></div>
+          <a class="official" href="https://www.eg-da.org/english" target="_blank" rel="noopener noreferrer">英文介紹 →</a>
+          <a class="official" href="https://www.eg-da.org/english/registration" target="_blank" rel="noopener noreferrer">報名說明 →</a>
+        </dl>
+      </article>
+
+      <article class="comp" data-region="hk" data-levels="primary secondary" data-cats="infographic logo" data-status="closed">
+        <div>
+          <div class="comp-meta">
+            <span class="tag tag-closed">已完結</span>
+            <span class="tag">香港</span>
+            <span class="tag">填色 · 海報</span>
           </div>
-          <div>
-            <dt>狀態</dt>
-            <dd>2026 屆設計賽已完結；留意官網下屆</dd>
-          </div>
+          <h3>第59屆聯校科學展覽 — 小學填色／中學海報設計</h3>
+          <p class="blurb">主題「輝映」。設計賽約 2026年5月截止；展覽 8月於中央圖書館。留意第60屆。</p>
+        </div>
+        <dl class="comp-aside">
+          <div><dt>主辦</dt><dd>聯校科學展覽籌備委員會</dd></div>
+          <div><dt>狀態</dt><dd>2026 屆設計賽已完結</dd></div>
           <a class="official" href="https://www.jsse.org.hk/" target="_blank" rel="noopener noreferrer">JSSE 官網 →</a>
         </dl>
       </article>
 
-      <article class="comp" data-levels="primary secondary" data-tags="design tech" data-status="closed">
+      <article class="comp" data-region="hk" data-levels="primary secondary" data-cats="game" data-status="closed">
         <div>
           <div class="comp-meta">
             <span class="tag tag-closed">已完結</span>
-            <span class="tag">小學 · 中學</span>
-            <span class="tag">VR／AR · 遊戲場景</span>
+            <span class="tag">香港</span>
+            <span class="tag">VR／AR</span>
           </div>
           <h3>第六屆 AiTLE 中小學創科 VR／AR 設計獎（TIDA6）</h3>
-          <p class="blurb">以 Delightex 或 XRCC 製作故事、遊戲或場景。作品截止 2026年5月18日；結果 2026年6月公佈。年度賽，下屆開放時適合遊戲／互動設計取向學生。</p>
+          <p class="blurb">Delightex 或 XRCC 製作故事、遊戲或場景。作品截止約 2026年5月。</p>
         </div>
         <dl class="comp-aside">
-          <div>
-            <dt>主辦</dt>
-            <dd>資訊科技教育領袖協會（AiTLE）等</dd>
-          </div>
-          <div>
-            <dt>狀態</dt>
-            <dd>TIDA6 已完結；留意 AiTLE 公告</dd>
-          </div>
+          <div><dt>主辦</dt><dd>AiTLE 等</dd></div>
+          <div><dt>狀態</dt><dd>TIDA6 已完結</dd></div>
           <a class="official" href="https://www.aitle.org.hk/?p=13416" target="_blank" rel="noopener noreferrer">TIDA6 詳情 →</a>
         </dl>
       </article>
 
-      <article class="comp" data-levels="primary" data-tags="tech design" data-status="closed">
+      <article class="comp" data-region="hk" data-levels="primary" data-cats="game coding app" data-status="closed">
         <div>
           <div class="comp-meta">
             <span class="tag tag-closed">已完結</span>
-            <span class="tag">高小</span>
+            <span class="tag">香港</span>
             <span class="tag">Scratch · App Inventor</span>
           </div>
           <h3>第10屆全港小學生運算思維比賽（CoolThink@JC）</h3>
-          <p class="blurb">小四至小六以 Scratch 或 App Inventor 設計解難方案；初賽主題為健康生活／運動。決賽於 2026年5月舉行。年度賽，適合遊戲與應用編程入門。</p>
+          <p class="blurb">小四至小六以 Scratch 或 App Inventor 解難；決賽約 2026年5月。</p>
         </div>
         <dl class="comp-aside">
-          <div>
-            <dt>主辦</dt>
-            <dd>CoolThink@JC、ACTiCT</dd>
-          </div>
-          <div>
-            <dt>狀態</dt>
-            <dd>第10屆已完結；留意 coolthink.hk</dd>
-          </div>
+          <div><dt>主辦</dt><dd>CoolThink@JC、ACTiCT</dd></div>
+          <div><dt>狀態</dt><dd>第10屆已完結</dd></div>
           <a class="official" href="https://coolthink.hk/10th-primarysch-ctcompetition/" target="_blank" rel="noopener noreferrer">比賽專頁 →</a>
         </dl>
       </article>
 
-      <article class="comp" data-levels="primary secondary" data-tags="tech design" data-status="closed">
+      <article class="comp" data-region="hk" data-levels="primary secondary" data-cats="game coding" data-status="closed">
         <div>
           <div class="comp-meta">
             <span class="tag tag-closed">已完結</span>
-            <span class="tag">小學 · 中學</span>
-            <span class="tag">Scratch 遊戲 · 裝置</span>
+            <span class="tag">香港</span>
+            <span class="tag">Scratch 遊戲</span>
           </div>
           <h3>創意編程設計大賽 2025/26</h3>
-          <p class="blurb">香港青年協會與港大合辦。含 Scratch 作品設計賽（可持續未來城市）、micro:bit 任務挑戰及裝置模型設計。2026年7月賽事日完結——下學年通常再開，適合遊戲與硬件創作。</p>
+          <p class="blurb">含 Scratch 作品設計、micro:bit 任務及裝置模型。2026年7月賽事日完結。</p>
         </div>
         <dl class="comp-aside">
-          <div>
-            <dt>主辦</dt>
-            <dd>香港青年協會、香港大學電機與計算機工程系</dd>
-          </div>
-          <div>
-            <dt>狀態</dt>
-            <dd>2025/26 已完結；留意下屆</dd>
-          </div>
+          <div><dt>主辦</dt><dd>香港青年協會、港大 ECE</dd></div>
+          <div><dt>狀態</dt><dd>2025/26 已完結</dd></div>
           <a class="official" href="https://ce.hkfyg.org.hk/teachers-zone/competition/ccc/" target="_blank" rel="noopener noreferrer">大賽專頁 →</a>
         </dl>
       </article>
 
-      <article class="comp" data-levels="primary secondary" data-tags="tech" data-status="closed">
+      <article class="comp" data-region="hk" data-levels="primary secondary" data-cats="sciencefair" data-status="closed">
         <div>
           <div class="comp-meta">
             <span class="tag tag-closed">近期完結</span>
-            <span class="tag">小學 · 中學</span>
+            <span class="tag">香港</span>
             <span class="tag">科學嘉年華</span>
           </div>
           <h3>第五屆香港創科展（Hong Kong Science Fair）</h3>
-          <p class="blurb">香港創新基金會主辦。第一階段報名曾截止於 2025年11月30日；入圍隊伍於 2026年6月在會展展出。屬大型科學嘉年華式賽事，下屆報名通常於秋季再開。</p>
+          <p class="blurb">報名曾截止於 2025年11月；展出約 2026年6月。留意下屆秋季報名。</p>
         </div>
         <dl class="comp-aside">
-          <div>
-            <dt>主辦</dt>
-            <dd>香港創新基金會（HKIF）</dd>
-          </div>
-          <div>
-            <dt>狀態</dt>
-            <dd>第五屆展出已過；留意下屆報名</dd>
-          </div>
+          <div><dt>主辦</dt><dd>香港創新基金會</dd></div>
+          <div><dt>狀態</dt><dd>第五屆已過；留意下屆</dd></div>
           <a class="official" href="https://www.hksciencefair.org.hk/" target="_blank" rel="noopener noreferrer">創科展官網 →</a>
         </dl>
       </article>
 
-      <article class="comp" data-levels="primary secondary" data-tags="design" data-status="closed">
+      <article class="comp" data-region="hk" data-levels="primary secondary" data-cats="logo" data-status="closed">
         <div>
           <div class="comp-meta">
             <span class="tag tag-closed">已完結</span>
-            <span class="tag">高小 · 初中</span>
+            <span class="tag">香港</span>
             <span class="tag">標誌設計</span>
           </div>
-          <h3>雅麗氏何妙齡那打素慈善基金會 140 周年標誌設計比賽</h3>
-          <p class="blurb">公開標誌（logo）設計及中文標語創作，組別含高小、初中。參賽期約 2026年9月1日至10月16日——近期完結的真實 logo 設計賽例子。</p>
+          <h3>那打素慈善基金會 140 周年標誌設計比賽</h3>
+          <p class="blurb">高小、初中標誌及中文標語創作；約 2026年9–10月截止。</p>
         </div>
         <dl class="comp-aside">
-          <div>
-            <dt>主辦</dt>
-            <dd>雅麗氏何妙齡那打素慈善基金會</dd>
-          </div>
-          <div>
-            <dt>狀態</dt>
-            <dd>2026 屆已截止</dd>
-          </div>
+          <div><dt>主辦</dt><dd>雅麗氏何妙齡那打素慈善基金會</dd></div>
+          <div><dt>狀態</dt><dd>2026 屆已截止</dd></div>
           <a class="official" href="https://www.nethersole.org.hk/slogan-logo-comp/" target="_blank" rel="noopener noreferrer">比賽專頁 →</a>
         </dl>
       </article>
 
-      <article class="comp" data-levels="primary secondary" data-tags="design" data-status="closed">
+      <article class="comp" data-region="hk" data-levels="primary secondary" data-cats="writing" data-status="closed">
         <div>
           <div class="comp-meta">
             <span class="tag tag-closed">已完結</span>
-            <span class="tag">幼 · 小 · 中</span>
+            <span class="tag">香港</span>
             <span class="tag">科幻／奇幻寫作</span>
           </div>
           <h3>第八屆全港創意寫作比賽</h3>
-          <p class="blurb">亞洲啟迪文藝協會主辦。題材含童話、奇幻、科幻等；報名及上載曾截止於 2025年12月18日。屬近年仍活躍的學生寫作賽，適合科幻故事線。</p>
+          <p class="blurb">題材含童話、奇幻、科幻等；報名曾截止於 2025年12月18日。</p>
         </div>
         <dl class="comp-aside">
-          <div>
-            <dt>主辦</dt>
-            <dd>亞洲啟迪文藝協會</dd>
-          </div>
-          <div>
-            <dt>狀態</dt>
-            <dd>第八屆已截止；留意下屆</dd>
-          </div>
+          <div><dt>主辦</dt><dd>亞洲啟迪文藝協會</dd></div>
+          <div><dt>狀態</dt><dd>第八屆已截止</dd></div>
           <a class="official" href="https://www.asia-ace.org/creativewriting_8th/" target="_blank" rel="noopener noreferrer">比賽專頁 →</a>
         </dl>
       </article>
 
-      <article class="comp" data-levels="secondary" data-tags="tech design" data-status="closed">
+      <article class="comp" data-region="hk" data-levels="secondary" data-cats="app web coding" data-status="closed">
         <div>
           <div class="comp-meta">
             <span class="tag tag-closed">已完結</span>
-            <span class="tag">初中 · 高中</span>
-            <span class="tag">App／網頁創新</span>
+            <span class="tag">香港</span>
+            <span class="tag">學生創新</span>
           </div>
           <h3>香港資訊及通訊科技獎 — 學生創新獎 2026</h3>
-          <p class="blurb">政府 Digitization 旗艦獎項的學生組，鼓勵 ICT 產品／服務創新（含應用與網頁類構想）。2026 屆報名曾至 7月20日。年度舉行，適合有成品或原型的中學生。</p>
+          <p class="blurb">初中／高中 ICT 產品與服務創新。2026 屆報名約至 7月20日。</p>
         </div>
         <dl class="comp-aside">
-          <div>
-            <dt>主辦</dt>
-            <dd>數碼辦；籌辦：香港創新科技發展協會等</dd>
-          </div>
-          <div>
-            <dt>狀態</dt>
-            <dd>2026 屆已截止；留意 hkictawards.hk</dd>
-          </div>
+          <div><dt>主辦</dt><dd>數碼辦；籌辦機構見章程</dd></div>
+          <div><dt>狀態</dt><dd>2026 屆已截止</dd></div>
           <a class="official" href="https://www.hkictawards.hk/" target="_blank" rel="noopener noreferrer">HKICT Awards →</a>
         </dl>
       </article>
+
+      <article class="comp" data-region="global" data-levels="secondary" data-cats="app coding" data-status="closed">
+        <div>
+          <div class="comp-meta">
+            <span class="tag tag-closed">暫停中</span>
+            <span class="tag tag-global">國際（美國為主）</span>
+            <span class="tag">應用編程</span>
+          </div>
+          <h3>NASA App Development Challenge</h3>
+          <p class="blurb">高中／社區學院編碼挑戰，對接 Artemis 任務。官方標示 2026 暫停，或於 2027 重開——留意 NASA 頁。</p>
+        </div>
+        <dl class="comp-aside">
+          <div><dt>主辦</dt><dd>NASA</dd></div>
+          <div><dt>狀態</dt><dd>2026 暫停；或 2027 重開</dd></div>
+          <div><dt>對象</dt><dd>高中及社區學院（多為美國）</dd></div>
+          <a class="official" href="https://www.nasa.gov/learning-resources/app-development-challenge/" target="_blank" rel="noopener noreferrer">NASA ADC →</a>
+        </dl>
+      </article>
     </div>
+
+    <p class="empty-state" id="empty-state">沒有符合目前篩選的賽事。試著改選「全部」或放寬類別／對象。</p>
   </section>
+
+  <div class="band" id="about-filters">
+    <div class="band-inner">
+      <h2>香港為主，國際可選。用四個下拉選單交叉篩選。</h2>
+      <p>地區、類別、對象、狀態即時過濾，無需重新載入。截止日一律以官方連結為準。</p>
+    </div>
+  </div>
 
   <footer>
     <p class="brand-foot">STEAM<span>info</span></p>
-    <p><strong>免責與資料來源：</strong>本頁為靜態整理，方便家長與學生快速找到香港中小學相關 STEAM／創意比賽。截止日、組別與規則以各主辦單位官方頁為準；標示「開放中」以 2026年11月24日查核結果為依據。部分活動頁對組別細節較簡略者已加註。非官方合作頁。</p>
-    <p style="margin-top:1rem;">倉庫：<a href="https://github.com/luac5/steaminfo" style="color:var(--amber-soft)">github.com/luac5/steaminfo</a></p>
+    <p><strong>免責與資料來源：</strong>靜態整理頁。香港與國際賽事之截止日、組別與資格以各主辦官方頁為準。標示以 2026年11月24日查核為依據。部分賽事有國籍／學校地區限制（例如 EKKOMED、NASA ADC），已於條目註明。非官方合作頁。</p>
+    <p style="margin-top:1rem;">倉庫：<a href="https://github.com/luac5/steaminfo" style="color:var(--amber-soft)">github.com/luac5/steaminfo</a> · 預覽：<a href="https://luac5.github.io/steaminfo/" style="color:var(--amber-soft)">luac5.github.io/steaminfo</a></p>
   </footer>
 
   <script>
     (function () {
-      const buttons = document.querySelectorAll(".filter-btn");
-      const items = document.querySelectorAll("#open-list .comp");
+      var regionEl = document.getElementById("filter-region");
+      var categoryEl = document.getElementById("filter-category");
+      var audienceEl = document.getElementById("filter-audience");
+      var statusEl = document.getElementById("filter-status");
+      var countEl = document.getElementById("filter-count");
+      var emptyEl = document.getElementById("empty-state");
+      var items = Array.prototype.slice.call(document.querySelectorAll("#comp-list .comp"));
 
-      function applyFilter(key) {
+      function applyFilters() {
+        var region = regionEl.value;
+        var category = categoryEl.value;
+        var audience = audienceEl.value;
+        var status = statusEl.value;
+        var shown = 0;
+
         items.forEach(function (el) {
-          const levels = (el.getAttribute("data-levels") || "").split(/\s+/);
-          const tags = (el.getAttribute("data-tags") || "").split(/\s+/);
-          let show = true;
-          if (key === "primary") show = levels.indexOf("primary") !== -1;
-          else if (key === "secondary") show = levels.indexOf("secondary") !== -1;
-          else if (key === "design") show = tags.indexOf("design") !== -1;
-          else if (key === "tech") show = tags.indexOf("tech") !== -1;
+          var regions = (el.getAttribute("data-region") || "").split(/\s+/);
+          var cats = (el.getAttribute("data-cats") || "").split(/\s+/);
+          var levels = (el.getAttribute("data-levels") || "").split(/\s+/);
+          var st = el.getAttribute("data-status") || "";
+
+          var okRegion = region === "all" || regions.indexOf(region) !== -1;
+          var okCat = category === "all" || cats.indexOf(category) !== -1;
+          var okAud = audience === "all" || levels.indexOf(audience) !== -1;
+          var okStatus = status === "all" || st === status;
+
+          var show = okRegion && okCat && okAud && okStatus;
           el.hidden = !show;
+          if (show) shown += 1;
         });
+
+        countEl.innerHTML = "顯示 <strong>" + shown + "</strong> / " + items.length + " 項";
+        emptyEl.classList.toggle("visible", shown === 0);
       }
 
-      buttons.forEach(function (btn) {
-        btn.addEventListener("click", function () {
-          const key = btn.getAttribute("data-filter");
-          buttons.forEach(function (b) {
-            b.setAttribute("aria-pressed", b === btn ? "true" : "false");
-          });
-          applyFilter(key);
-        });
+      [regionEl, categoryEl, audienceEl, statusEl].forEach(function (el) {
+        el.addEventListener("change", applyFilters);
       });
+
+      applyFilters();
+
+      // Deep-link support: #open keeps working; optional query via hash params not required
+      if (location.hash === "#filters") {
+        document.getElementById("filters").scrollIntoView();
+      }
     })();
   </script>
 </body>
